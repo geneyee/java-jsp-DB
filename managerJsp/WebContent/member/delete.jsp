@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
 <%
 	int num = Integer.parseInt(request.getParameter("num"));
-	MemberService service= new MemberService(new MemberDao());
+	MemberService service= MemberService.getInstance();
 	if(service.remove(num)) {
 		response.sendRedirect(request.getContextPath()+"/member/list.jsp");
 	}else {

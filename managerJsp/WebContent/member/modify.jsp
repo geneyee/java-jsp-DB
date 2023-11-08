@@ -8,7 +8,7 @@
 	String nickName = request.getParameter("nickName");
 	int num = Integer.parseInt(request.getParameter("num"));
 	
-	MemberService service = new MemberService(new MemberDao());
+	MemberService service = MemberService.getInstance();
 	
 	MemberVo vo = new MemberVo(num, memberId, pwNew, nickName);
 	if(service.edit(vo, pwOld)) {

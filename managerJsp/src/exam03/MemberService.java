@@ -4,10 +4,21 @@ import java.util.List;
 
 public class MemberService {
 	
+	private static MemberService instance;
 	private MemberDao memberDao;
 	
-	public MemberService(MemberDao memberDao) {
+	private MemberService(MemberDao memberDao) {
 		this.memberDao = memberDao;
+	}
+	
+	// 싱글톤 적용
+	public static MemberService getInstance() {
+		synchronized (MemberService.class) {
+			if(instance == null) {
+				instance =  new MemberService(MemberDao.getInstance());
+			}
+		}
+		return instance;
 	}
 
 	// 등록하기

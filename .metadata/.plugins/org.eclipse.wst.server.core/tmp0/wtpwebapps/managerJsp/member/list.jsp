@@ -2,8 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	MemberDao dao = new MemberDao();
-	MemberService ms = new MemberService(dao);
+	MemberService ms = MemberService.getInstance();
 	List<MemberVo> list = ms.listAll();
 %>
 <!DOCTYPE html>

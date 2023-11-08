@@ -8,10 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MemberDao {
+	private static MemberDao instance;
 	private JdbcConnectionUtil util;
 	
-	public MemberDao() {
+	private MemberDao() {
 		util = JdbcConnectionUtil.getInstance();
+	}
+	
+	// 싱글톤 패턴 적용
+	public static MemberDao getInstance() {
+		synchronized (MemberDao.class) {// 멀티쓰레딩 공부
+			if(instance == null) {
+				instance = new MemberDao();
+			}
+		}
+		return instance;
 	}
 	
 	// C

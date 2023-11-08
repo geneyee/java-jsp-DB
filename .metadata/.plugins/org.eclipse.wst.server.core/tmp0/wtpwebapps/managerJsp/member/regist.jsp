@@ -10,8 +10,8 @@
 	String nickName = request.getParameter("nickName");
 	
 	MemberVo vo = new MemberVo(-1, memberId, memberPw, nickName);
-	MemberDao dao = new MemberDao();
-	MemberService  memberService = new MemberService(dao);
+	
+	MemberService  memberService = MemberService.getInstance();
 	
 	if(memberService.regist(vo)) {
 		response.sendRedirect(request.getContextPath()+"/member/index.jsp");

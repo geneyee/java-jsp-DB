@@ -12,8 +12,7 @@
 		
 		int num = Integer.parseInt(parameter);
 		
-		MemberDao dao = new MemberDao();
-		MemberService service = new MemberService(dao);
+		MemberService service = MemberService.getInstance();
 		MemberVo vo = service.read(num);
 %>
 <!DOCTYPE html>

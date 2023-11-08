@@ -3,9 +3,8 @@
     pageEncoding="UTF-8"%>
 <%
 	int num = Integer.parseInt(request.getParameter("num"));
-	
-	MemberDao dao = new MemberDao();
-	MemberService service = new MemberService(dao);
+
+	MemberService service = MemberService.getInstance();
 	MemberVo vo = service.read(num);
 %>
 <!DOCTYPE html>
