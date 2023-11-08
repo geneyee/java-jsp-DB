@@ -1,0 +1,7 @@
+package examjdbc01;
+
+public class Snippet {
+	insert into member (num, memberid, memberpw, nickname, regdate) 
+	values (MEMBER_SEQ.nextval, 'tester1', '1234', 'nick1', sysdate);
+}
+

@@ -1,0 +1,30 @@
+package manager;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Map<Integer, MemberVo> db = new HashMap<>();
+		
+		//C(insert)
+		MemberVo vo1 = new  MemberVo(1, "test1", "1234", "nick1");
+		vo1.setRegdate(new Date());
+		MemberVo vo2 = new  MemberVo(1, "test2", "1234", "nick2");
+		vo2.setRegdate(new Date());
+		MemberVo vo3 = new  MemberVo(1, "test3", "1234", "nick3");
+		vo3.setRegdate(new Date());
+		
+		db.put(1, vo1);
+		db.put(2, vo2);
+		db.put(3, vo3);
+		
+		//R(select)
+		//U(update)
+		//D(delete)
+	}
+
+}

@@ -1,0 +1,20 @@
+<%@page import="exam03.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	MemberDao dao = new MemberDao();
+	MemberService memberService = new MemberService(dao);
+	if(memberService.listAll())
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 목록</title>
+</head>
+<body>
+<form>
+
+</form>
+</body>
+</html>

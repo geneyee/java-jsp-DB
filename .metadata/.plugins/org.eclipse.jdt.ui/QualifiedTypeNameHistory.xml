@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="manager.MemberVo"/>
+    <fullyQualifiedTypeName name="manager.MemberService"/>
+    <fullyQualifiedTypeName name="manager.MemberDao"/>
+    <fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="examjdbc01.MemberVo"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.beans.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="examjdbc02.JdbcConnectionUtil"/>
+    <fullyQualifiedTypeName name="examjdbc01.MemberDao"/>
+    <fullyQualifiedTypeName name="examjdbc01.JdbcConnectionUtil"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="exam03.MemberDao"/>
+    <fullyQualifiedTypeName name="exam03.JdbcConnectionUtil"/>
+    <fullyQualifiedTypeName name="exam03.MemberVo"/>
+</qualifiedTypeNameHistroy>
