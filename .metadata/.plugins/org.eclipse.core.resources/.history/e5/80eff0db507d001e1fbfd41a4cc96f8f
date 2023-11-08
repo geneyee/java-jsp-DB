@@ -1,6 +1,0 @@
-package examjdbc01;
-
-// ½Ì±ÛÅæ(Singleton) Àû¿ë
-public class JdbcConnectionUtil {
-	private static jdbc
-}
