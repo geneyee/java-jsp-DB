@@ -6,6 +6,8 @@
 <jsp:setProperty name="vo" property="*"/>
 
 <%
+	MemberVo vo = new MemberVo(-1, memberId, memberPw, nickName);
+	
 	MemberService  memberService = MemberService.getInstance();
 	
 	if(memberService.regist(vo)) {

@@ -10,12 +10,12 @@
 	MemberVo vo = new MemberVo(
 			modifyRequest.getNum(), 
 			modifyRequest.getMemberId(), 
-			modifyRequest.getMemberPwNew(), 
+			modifyRequest.getPwNew(), 
 			modifyRequest.getNickName());
-	if(service.edit(vo, modifyRequest.getMemberPwOld())) {
-		response.sendRedirect("detail.jsp?num=" + modifyRequest.getNum());
+	if(service.edit(vo, modifyRequest.getPwOld())) {
+		response.sendRedirect("detail.jsp?num="+num);
 	}else {
 		System.out.println("기존 비밀번호 확인");		
-		response.sendRedirect("modifyForm.jsp?num=" + modifyRequest.getNum());
+		response.sendRedirect("modifyForm.jsp?num="+num);
 	}
 %>    
