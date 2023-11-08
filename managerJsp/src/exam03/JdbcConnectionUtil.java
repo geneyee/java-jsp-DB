@@ -7,6 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 // 싱글톤(Singleton) 적용
 public class JdbcConnectionUtil {
 	
@@ -16,8 +21,14 @@ public class JdbcConnectionUtil {
 	private String user = "jspuser";
 	private String password = "1234";
 	
+//	private DataSource ds;
+	
 	private JdbcConnectionUtil() {
-		
+		/*
+		  try { Context ctx = new InitialContext(); ds = (DataSource)
+		  ctx.lookup("java:/comp/env/jdbc/TestDB"); } catch (NamingException e) {
+		  e.printStackTrace(); }
+		 */
 	}
 	
 	public static JdbcConnectionUtil getInstance() {
@@ -36,6 +47,7 @@ public class JdbcConnectionUtil {
 	
 	public Connection getConnection() throws SQLException {
 		return DriverManager.getConnection(url, user, password);
+//		return ds.getConnection();
 	}
 	
 	public void close(ResultSet rs) {

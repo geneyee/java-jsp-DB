@@ -7,12 +7,23 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 public class MemberDao {
 	private static MemberDao instance;
-	private JdbcConnectionUtil util;
+	private DataSource ds;
+	// private JdbcConnectionUtil instance;
 	
 	private MemberDao() {
-		util = JdbcConnectionUtil.getInstance();
+		try {
+			Context ctx = new InitialContext();
+			ds = (DataSource) ctx.lookup("java:/comp/env/jdbc/TestDB");	// JNDI경로
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	// 싱글톤 패턴 적용
@@ -32,7 +43,7 @@ public class MemberDao {
 		 int result = 0;
 
 			try {
-				conn = util.getConnection();
+				conn = ds.getConnection();
 				System.out.println("DB 연결");
 				
 				StringBuffer query = new StringBuffer();
@@ -80,7 +91,7 @@ public class MemberDao {
 		 MemberVo result = null;
 		 
 			try {
-				conn = util.getConnection();
+				conn = ds.getConnection();
 				System.out.println("DB 연결");
 				pstmt = conn.prepareStatement("select * from member where num = ?");
 				pstmt.setInt(1, num);
@@ -134,7 +145,7 @@ public class MemberDao {
 		List<MemberVo> result = new ArrayList<>();
 
 		try {
-			conn = util.getConnection();
+			conn = ds.getConnection();
 			System.out.println("DB 연결");
 			pstmt = conn.prepareStatement("select * from member");
 			rs = pstmt.executeQuery(); // 쿼리 실행해서 결과값 rs에 저장
@@ -189,7 +200,7 @@ public class MemberDao {
 		 int result = 0;
 		 
 			try {
-				conn = util.getConnection();
+				conn = ds.getConnection();
 				System.out.println("DB 연결");
 				
 				StringBuffer query = new StringBuffer();
@@ -236,7 +247,7 @@ public class MemberDao {
 		 int result = 0;
 		
 			try {
-				conn = util.getConnection();
+				conn = ds.getConnection();
 				System.out.println("DB 연결");
 				
 				StringBuffer query = new StringBuffer();
